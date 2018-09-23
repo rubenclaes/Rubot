@@ -10,6 +10,7 @@ respond immediately with a single line response.
 */
 
 var wordfilter = require('wordfilter');
+const Planet = require('./planet'); // this is new
 
 module.exports = function(controller) {
 
@@ -55,6 +56,21 @@ module.exports = function(controller) {
             bot.reply(message, 'I will repeat whatever you say.')
         }
     });
+
+    // listener that handles incoming messages
+    controller.hears(['^planet'], ['direct_message', 'direct_mention'], (bot, message) => {
+			
+	// pass the slack message to IBM Watson's Conversation
+	Planet.getPlanet(String(message.text), undefined)
+		.then(response => {
+			controller.log('Response from Watson received');
+            // let's do different stuff depending on the intent
+            bot.reply(response.explanation, 'I got intent xxx');
+		})
+		.catch(err => {
+			console.error(JSON.stringify(err, null, 2));
+		});
+});
 
 
     /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
