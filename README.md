@@ -1,2 +1,0 @@
-# Rubot
-Rubot by botbit
