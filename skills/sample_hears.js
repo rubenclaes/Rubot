@@ -36,7 +36,7 @@ module.exports = function(controller) {
                 convo.setVar('convos', stats.convos);
                 convo.setVar('triggers', stats.triggers);
 
-                convo.say('My main process has been online for {{vars.uptime}}. Since booting, I have heard {{vars.triggers}} triggers, and conducted {{vars.convos}} conversations.');
+                convo.say('Hi bwoyy My main process has been online for {{vars.uptime}}. Since booting, I have heard {{vars.triggers}} triggers, and conducted {{vars.convos}} conversations.');
                 convo.activate();
             }
         });
