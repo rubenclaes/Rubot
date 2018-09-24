@@ -10,6 +10,8 @@ respond immediately with a single line response.
 */
 
 var wordfilter = require('wordfilter');
+var request = require('request');
+
 
 module.exports = function(controller) {
 
@@ -56,6 +58,7 @@ module.exports = function(controller) {
         }
     });
 
+   
 
     /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
     /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
