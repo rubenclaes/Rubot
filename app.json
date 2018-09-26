@@ -21,6 +21,9 @@
       "studio_token": {
           "description": "Token associated with your bot in Botkit Studio",
           "required":false
-      }
+      },
+      "catApiKey": {
+          "description": "The Cat Api Key"
+      },
   }
 }
